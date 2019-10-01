@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Android_Sprint3_Challenge</string>
+    <string name="enter_pokemon_name_or_number">Enter Pokemon Name or Number</string>
+
+    <string name="title_activity_fullscreen_detail">FullscreenDetailActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>
