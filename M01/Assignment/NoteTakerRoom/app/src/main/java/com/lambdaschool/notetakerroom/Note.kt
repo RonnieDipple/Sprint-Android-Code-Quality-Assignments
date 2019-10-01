@@ -8,32 +8,30 @@ import org.json.JSONObject
 import java.io.Serializable
 
 @Entity
-class Note : Serializable {
+class Note (@PrimaryKey(autoGenerate = true) var id: Long? = null) : Serializable {
 
     var title: String? = null
     var content: String? = null
-
-    @PrimaryKey(autoGenerate = true)
-    var id: Long = 0
+   // var id: Long = 0
 
     var timestamp: Long = 0
-        private set
+      //  private set
 
-    constructor(id: Long, title: String, content: String) {
+    constructor(id: Long, title: String, content: String) : this() {
         this.title = title
         this.content = content
         this.id = id
         this.timestamp = System.currentTimeMillis()
     }
 
-    constructor(title: String, content: String, id: String, timestamp: Long) {
+    constructor(title: String, content: String, id: String, timestamp: Long) : this() {
         this.title = title
         this.content = content
         this.id = id.toLongOrNull() ?: 0
         this.timestamp = timestamp
     }
 
-    constructor(id: String, title: String, content: String) {
+    constructor(id: String, title: String, content: String) : this() {
         this.title = title
         this.content = content
         this.id = id.toLongOrNull() ?: 0
@@ -49,16 +47,16 @@ class Note : Serializable {
         toCsvString();
     }*/
 
-    constructor(id: String) {
+    constructor(id: String) : this() {
         this.id = id.toLongOrNull() ?: 0
         this.timestamp = System.currentTimeMillis()
     }
 
-    constructor(id: Long) {
+    constructor(id: Long) : this() {
         this.id = id
     }
 
-    constructor(jsonObject: JSONObject, name: String) {
+    constructor(jsonObject: JSONObject, name: String) : this() {
         this.id = name.toLongOrNull() ?: 0
 
         try {
@@ -75,6 +73,12 @@ class Note : Serializable {
 
         try {
             this.timestamp = jsonObject.getLong("timestamp")
+        } catch (e: JSONException) {
+            e.printStackTrace()
+        }
+
+        try {
+            this.id = jsonObject.getLong("id")
         } catch (e: JSONException) {
             e.printStackTrace()
         }
@@ -107,6 +111,8 @@ class Note : Serializable {
 
         return json.toString()
     }
+
+
 
     companion object {
         val NO_ID = ""

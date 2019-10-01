@@ -37,14 +37,14 @@ object SharedPrefsDao {
             return notes
         }
 
-    private val nextId: Int
+    private val nextId: Long
         get() {
-            var currentId = 0
+            var currentId = 0L
             MainActivity.preferences?.let {
-                currentId = it.getInt(NEXT_KEY_ID, 0)
+                currentId = it.getLong(NEXT_KEY_ID, 0)
                 val nextId = currentId + 1
                 val editor = it.edit()
-                editor.putInt(NEXT_KEY_ID, nextId)
+                editor.putLong(NEXT_KEY_ID, nextId)
                 editor.apply()
             }
             return currentId
@@ -60,14 +60,14 @@ object SharedPrefsDao {
     }
 
     fun setNote(note: Note) {
-        if (note.getId() == Note.NO_ID) {
-            note.setId(nextId)
+        if (note.id.toString() == Note.NO_ID) {
+            note.id = nextId
         }
         val ids = allIds
         var exists = false
         for (id in ids) {
             if (id != "") {
-                if (note.getId() == id) {
+                if (note.id.toString() == id) {
                     exists = true
                     break
                 }
@@ -75,7 +75,7 @@ object SharedPrefsDao {
         }
 
         if (!exists) {
-            addId(note.getId())
+            addId(note.id.toString())
         }
 
         addNote(note)
@@ -83,7 +83,7 @@ object SharedPrefsDao {
 
     private fun addNote(note: Note) {
         val editor = MainActivity.preferences?.edit()
-        editor?.putString(KEY_ID_PREFIX + note.getId()!!, note.toCsvString())
+        editor?.putString(KEY_ID_PREFIX + note.id!!, note.toCsvString())
         editor?.apply()
     }
 
