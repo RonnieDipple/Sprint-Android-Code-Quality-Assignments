@@ -1,5 +1,6 @@
 package com.lambdaschool.basicandroidnetworking.retrofit
 
+import android.app.Dialog
 import android.util.Log
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.GsonBuilder
