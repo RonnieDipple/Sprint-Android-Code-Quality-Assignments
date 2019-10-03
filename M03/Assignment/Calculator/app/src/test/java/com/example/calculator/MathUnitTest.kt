@@ -48,6 +48,19 @@ class MathUnitTest {
 
     }
 
+    @Test
+    fun calculatorPrimeTest(){
+        val num1 = 3
+        val expected = true
+
+
+        `when`(math.isPrime(num1)).thenReturn(expected)
+
+        val n = calculator.prime(num1)
+
+        assertEquals(expected, n)
+    }
+
 
 
 

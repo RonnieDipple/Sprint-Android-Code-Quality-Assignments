@@ -12,6 +12,10 @@ class Calculator(private val math: Math) {
         return math.numDifAbs(num1, num2)
 
     }
+    
+    fun prime(num1: Int): Boolean{
+        return math.isPrime(num1)
+    }
 
 
 

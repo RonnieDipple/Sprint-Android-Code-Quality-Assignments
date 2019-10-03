@@ -18,5 +18,18 @@ class Math {
 so a 5 factorial (denoted as 5!) is 5 * 4 * 3 * 2 * 1" -Tyler Clawson lol*/
         return if (int == 1) int else int*factorial(int - 1)
     }
+
+    //Checks if number is a prime number
+
+    fun isPrime(num1: Int): Boolean{
+
+        for (i in 2..num1 / 2){
+            if(num1 % i == 0){
+                return false
+            }
+        }
+
+        return true
+    }
     
 }
