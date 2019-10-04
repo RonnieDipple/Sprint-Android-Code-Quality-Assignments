@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/numberDisp"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="16dp"
+        android:textSize="36sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/display" />
+
+    <TextView
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:orientation="horizontal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:layout_width="103dp"
+            android:layout_height="50dp"
+            android:onClick="num"
+            android:text="Seven"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Eight"
+            android:onClick="num"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button_nine"
+            android:layout_width="103dp"
+            android:layout_height="50dp"
+            android:text="Nine"
+            android:onClick="num"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="All Clear"
+            android:onClick="allClear"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="264dp"
+        android:orientation="horizontal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:layout_width="103dp"
+            android:layout_height="50dp"
+            android:text="Four"
+            android:onClick="num"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Five"
+            android:onClick="num"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
+
+        <Button
+            android:layout_width="103dp"
+            android:layout_height="50dp"
+            android:text="Six"
+            android:onClick="num"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="/"
+            android:onClick="operator"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="328dp"
+        android:orientation="horizontal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:layout_width="103dp"
+            android:layout_height="50dp"
+            android:text="One"
+            android:onClick="num"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Two"
+            android:onClick="num"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
+
+        <Button
+            android:layout_width="103dp"
+            android:layout_height="50dp"
+            android:text="Three"
+            android:onClick="num"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Multiply"
+            android:onClick="operator"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="400dp"
+        android:orientation="horizontal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:layout_width="103dp"
+            android:layout_height="50dp"
+            android:text="Zero"
+            android:onClick="num"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Add"
+            android:onClick="operator"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
+
+        <Button
+            android:layout_width="103dp"
+            android:layout_height="50dp"
+            android:text="Subtract"
+            android:onClick="operator"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Equal"
+            android:onClick="equal"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
